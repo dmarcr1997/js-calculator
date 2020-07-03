@@ -1,5 +1,10 @@
 
 class Calc {
+    static submitDisplay(display){
+        let splitDis =  display.split(' ')
+        splitDis.find
+        
+    }
     static add(nums){
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         return nums.reduce(reducer, 0)
