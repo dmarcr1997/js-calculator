@@ -1,8 +1,19 @@
 
 class Calc {
     static submitDisplay(display){
-        let splitDis =  display.split(' ')
-        splitDis.find
+        let splitDis =  display.split(" ")
+        let op = splitDis[1]
+        let nums = [splitDis[0], splitDis[2]]
+        switch(op){
+            case '+':
+                return Calc.add(nums)
+            case '-':
+                return Calc.subtract(nums)
+            case '*':
+                return Calc.multiply(nums)
+            case '/':
+                return Calc.divide(...nums)
+        }
         
     }
     static add(nums){

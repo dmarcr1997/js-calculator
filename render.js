@@ -15,14 +15,15 @@ let render = () => {
         eq.innerText = '='
         rest.innerText = 'CE'
         eq.addEventListener('click', (e) => {
-            Calc.submitDisplay(display)
-            calcTop.innerText = ''
-            display = ''
+            calcTop.innerText = Calc.submitDisplay(display)
+            display = Calc.submitDisplay(display)
         })
+        eq.classList.add('equal')
         rest.addEventListener('click', e => { 
             display=''
             calcTop.innerText = ''
         })
+        rest.classList.add('reset')
         parent.appendChild(eq)
         parent.appendChild(rest)
     }
