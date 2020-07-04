@@ -3,41 +3,36 @@ class Calc {
     static submitDisplay(display){
         let splitDis =  display.split(" ")
         let op = splitDis[1]
-        let nums = [splitDis[0], splitDis[2]]
+        let nums = [parseFloat(splitDis[0]), parseFloat(splitDis[2])]
         switch(op){
             case '+':
-                return Calc.add(nums)
+                return Calc.add(...nums)
             case '-':
-                return Calc.subtract(nums)
+                return Calc.subtract(...nums)
             case '*':
-                return Calc.multiply(nums)
+                return Calc.multiply(...nums)
             case '/':
                 return Calc.divide(...nums)
         }
         
     }
-    static add(nums){
-        const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        return nums.reduce(reducer, 0)
+    static add(num1, num2){
+        return num1 + num2
     }
-    static subtract(nums){
-        let difference = nums[0]
-        for(let i = 1; i < nums.length; i++){
-            difference -= nums[i]
-        }
+    static subtract(num1, num2){
+        let difference = num1 - num2
         return difference
     }
-    static multiply(nums){
-        let product = nums[0]
-        for(let i = 1; i < nums.length; i++){
-            product *= nums[i]
-        }
+    static multiply(num1, num2){
+        let product = num1 * num2
         return product
     }
     static divide(num1, num2){
-        if (num2 === 0)
-            alert("You cannot divide by Zero!")
-        else
+        if (num2 === 0){
+            return "You cannot divide by Zero!"
+        }   
+        else{
             return num1 / num2
+        }
     }
 }
